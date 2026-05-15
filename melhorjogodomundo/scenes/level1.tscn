@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ctv57foy1ylkq"]
+
+[ext_resource type="PackedScene" uid="uid://c4uuxkvp5ac2n" path="res://scenes/player.tscn" id="1_wwpf4"]
+[ext_resource type="PackedScene" uid="uid://c6qs0fcyuckta" path="res://scenes/tile.tscn" id="2_m7ahb"]
+
+[node name="Level1" type="Node2D" unique_id=997916945]
+
+[node name="Player" parent="." unique_id=1416905651 instance=ExtResource("1_wwpf4")]
+position = Vector2(-1, -49)
+input_pickable = true
+
+[node name="StaticBody2D" parent="." unique_id=152748602 instance=ExtResource("2_m7ahb")]
+position = Vector2(1, 34)

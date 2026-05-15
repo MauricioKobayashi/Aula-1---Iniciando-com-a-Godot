@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="melhorjogodomundo"
+run/main_scene="uid://ctv57foy1ylkq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [physics]
