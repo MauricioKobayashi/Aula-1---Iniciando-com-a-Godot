@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+var SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+func _ready() -> void:
+	print("Player Criado")
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -35,3 +38,17 @@ func _physics_process(delta: float) -> void:
 	
 func die():
 	get_tree().reload_current_scene()
+
+const SPEED_BOOST = 600.0       # velocidade durante o power-up
+const BOOST_DURATION = 5.0     # segundos de duração
+
+var boosted = false
+
+func apply_speed_boost():
+	if boosted:
+		return  # evita empilhar o efeito
+	boosted = true
+	SPEED = SPEED_BOOST
+	await get_tree().create_timer(BOOST_DURATION).timeout
+	SPEED = 300.0   # retorna ao valor original
+	boosted = false

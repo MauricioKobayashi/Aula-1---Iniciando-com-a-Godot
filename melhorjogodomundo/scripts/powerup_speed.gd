@@ -1,11 +1,18 @@
 extends Area2D
 
+signal speed_collected
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+@onready var particles = $Particles
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _ready():
+	body_entered.connect(_on_body_entered)
+	
+func _on_body_entered(body):
+	if body.name == "Player":
+		body.apply_speed_boost() # Ativa o power-up no player
+		speed_collected.emit(body)  # passa o próprio player como argumento
+		$Sprite2D.visible = false # Deixa a moeda invisível
+		$CollisionShape2D.set_deferred("disabled", true) # Desabilita o colisor
+		particles.emitting = true # Ativa as partículas
+		await particles.finished # Espera as partículas acabarem antes de seguir
+		queue_free()

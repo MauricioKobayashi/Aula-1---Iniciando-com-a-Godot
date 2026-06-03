@@ -83,6 +83,7 @@ position = Vector2(-1.5, 9)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1723097704]
+limit_bottom = 140
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1525695906]
 texture_filter = 1
