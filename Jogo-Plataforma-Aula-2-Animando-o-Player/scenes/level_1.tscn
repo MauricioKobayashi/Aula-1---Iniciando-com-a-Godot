@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://o4di15oeh58p"]
+
+[ext_resource type="PackedScene" uid="uid://b4ft0q2e65jit" path="res://scenes/player.tscn" id="1_014kd"]
+[ext_resource type="Texture2D" uid="uid://dp6ks41wc5vk4" path="res://icon.svg" id="2_bswci"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bswci"]
+distance = 62.5
+
+[node name="Level1" type="Node2D" unique_id=892684462]
+
+[node name="Player" parent="." unique_id=1617664681 instance=ExtResource("1_014kd")]
+position = Vector2(620, 207)
+
+[node name="Chão" type="StaticBody2D" parent="." unique_id=1072742243]
+position = Vector2(627, 319)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Chão" unique_id=1838090981]
+position = Vector2(-2, 2)
+scale = Vector2(8.0234375, 1)
+texture = ExtResource("2_bswci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chão" unique_id=896437601]
+position = Vector2(-2, -2.5)
+shape = SubResource("WorldBoundaryShape2D_bswci")
