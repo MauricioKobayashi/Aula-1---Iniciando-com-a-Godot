@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://be0ahdeati8dy"]
+
+[ext_resource type="Script" uid="uid://c45fpx65qkh1k" path="res://scripts/powerup_speed.gd" id="1_4amsp"]
+[ext_resource type="Texture2D" uid="uid://bmhbgia6vq5cq" path="res://assets/kenney_platformer-art-deluxe/Base pack/Items/star.png" id="2_murk2"]
+[ext_resource type="Texture2D" uid="uid://2mokiqyo5fwl" path="res://assets/kenney-particle-pack-7e801dc538996622a91327bb1dd5879cf977aa09/addons/kenney_particle_pack/star_08.png" id="3_6gwxh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11l1o"]
+radius = 18.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i64fm"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+gravity = Vector3(0, 98, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+color = Color(1, 0.84313726, 0, 1)
+
+[node name="powerup_speed" type="Area2D" unique_id=1596054943]
+script = ExtResource("1_4amsp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1986872683]
+texture = ExtResource("2_murk2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=713907023]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_11l1o")
+
+[node name="Particles" type="GPUParticles2D" parent="." unique_id=1419215079]
+emitting = false
+amount = 5
+texture = ExtResource("3_6gwxh")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_i64fm")
