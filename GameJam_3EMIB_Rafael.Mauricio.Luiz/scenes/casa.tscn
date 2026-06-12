@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c4uuxkvp5ac2n" path="res://scenes/player.tscn" id="3_lgdna"]
 [ext_resource type="PackedScene" uid="uid://0n627vjgjh07" path="res://scenes/Porta.tscn" id="4_d31c8"]
 [ext_resource type="Script" uid="uid://cy176kdm3vheg" path="res://scenes/PortaLevel1.gd" id="5_6lyl3"]
+[ext_resource type="Script" uid="uid://bpg6tjl78vhev" path="res://scenes/PortaLevel2.gd" id="7_c3ews"]
+[ext_resource type="Script" uid="uid://cg8qyqrn1anko" path="res://scenes/PortaLevel3.gd" id="8_uum25"]
 
 [node name="Casa" type="Node2D" unique_id=997916945]
 script = ExtResource("1_sje03")
@@ -55,9 +57,21 @@ id_porta = "porta_level1"
 
 [node name="PortaLevel2" parent="." unique_id=1587336107 instance=ExtResource("4_d31c8")]
 position = Vector2(1461, -59)
+script = ExtResource("7_c3ews")
+cena_destino = "uid://bl8umyofctw18"
+id_porta = "porta_level2"
 
 [node name="PortaLevel3" parent="." unique_id=199390078 instance=ExtResource("4_d31c8")]
 position = Vector2(1950, -59)
+script = ExtResource("8_uum25")
+cena_destino = "uid://bwxu3q7bt8a1p"
+id_porta = "porta_level3"
+
+[node name="SpawnLevel3" type="Marker2D" parent="." unique_id=207883298]
+position = Vector2(1950, -59)
+
+[node name="SpawnLevel2" type="Marker2D" parent="." unique_id=39903308]
+position = Vector2(1461, -59)
 
 [node name="SpawnLevel1" type="Marker2D" parent="." unique_id=777231974]
 position = Vector2(967, -59)

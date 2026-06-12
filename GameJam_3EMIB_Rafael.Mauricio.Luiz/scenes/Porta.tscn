@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://0n627vjgjh07"]
 
+[ext_resource type="Script" uid="uid://b67gdlg74muo5" path="res://scenes/porta.gd" id="1_1i7j2"]
 [ext_resource type="Texture2D" uid="uid://b31o6kxigv364" path="res://assets/porta.webp" id="1_jy2eq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1i7j2"]
 radius = 89.08984
 
 [node name="Porta" type="Area2D" unique_id=546798583]
+script = ExtResource("1_1i7j2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1236464778]
 shape = SubResource("CircleShape2D_1i7j2")

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c57173ugj2ht2"]
+
+[ext_resource type="Script" uid="uid://b8ei1dlq0m5qg" path="res://scenes/monstro.gd" id="1_n3nyr"]
+[ext_resource type="PackedScene" uid="uid://cai1idnao1ml2" path="res://scenes/killzone.tscn" id="2_mbj1w"]
+[ext_resource type="Texture2D" uid="uid://b1bpl58ku8ah6" path="res://assets/monstro.png" id="3_n3nyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijhqn"]
+size = Vector2(139, 181)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uy6h"]
+size = Vector2(216, 195)
+
+[node name="Monstro" type="CharacterBody2D" unique_id=544928089]
+script = ExtResource("1_n3nyr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=186149384]
+position = Vector2(0.5, 5.5)
+shape = SubResource("RectangleShape2D_ijhqn")
+
+[node name="Killzone" parent="." unique_id=317062166 instance=ExtResource("2_mbj1w")]
+position = Vector2(-112, -128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=659969570]
+position = Vector2(109.5, 116)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_5uy6h")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=325161777]
+scale = Vector2(0.2655054, 0.26550537)
+texture = ExtResource("3_n3nyr")
+flip_h = true
